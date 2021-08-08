@@ -7,16 +7,6 @@
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
-      {% if languages|length >= 1 %}
-      <dl>
-        <dt>{{ _('Languages') }}</dt>
-        {% for slug, url in languages %}
-          {% if slug == current_language %} <strong> {% endif %}
-          <dd><a href="{{ url }}">{{ slug }}</a></dd>
-          {% if slug == current_language %} </strong> {% endif %}
-        {% endfor %}
-      </dl>
-      {% endif %}
       {% if versions|length >= 1 %}
       <dl>
         <dt>{{ _('Versions') }}</dt>
@@ -24,14 +14,6 @@
           {% if slug == current_version %} <strong> {% endif %}
           <dd><a href="{{ url }}">{{ slug }}</a></dd>
           {% if slug == current_version %} </strong> {% endif %}
-        {% endfor %}
-      </dl>
-      {% endif %}
-      {% if downloads|length >= 1 %}
-      <dl>
-        <dt>{{ _('Downloads') }}</dt>
-        {% for type, url in downloads %}
-          <dd><a href="{{ url }}">{{ type }}</a></dd>
         {% endfor %}
       </dl>
       {% endif %}
